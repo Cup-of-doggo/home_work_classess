@@ -23,5 +23,5 @@ def test_init_category(category_fruit):
     assert category_fruit.name == "fruits"
     assert category_fruit.description == "fruits from India"
     assert category_fruit.products == ["banana", "mango"]
-    assert category_fruit.products_quantity == 2
+    assert category_fruit.product_count == 2
     assert Category.category_count == 1
