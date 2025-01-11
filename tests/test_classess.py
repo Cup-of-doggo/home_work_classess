@@ -1,6 +1,5 @@
-import pytest
 from src.classess import Product, Category
-
+import pytest
 
 @pytest.fixture
 def product_apple():
