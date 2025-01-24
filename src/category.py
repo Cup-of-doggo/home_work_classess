@@ -1,6 +1,3 @@
-from src.product import Product
-
-
 class Category:
     name: str
     description: str
@@ -20,7 +17,6 @@ class Category:
         return self.__products
 
 
-    def add_product(self,product):
+    def add_product(self,product: classmethod):
         self.product_count += 1
         return self.__products.append(product)
-
