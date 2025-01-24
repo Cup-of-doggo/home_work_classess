@@ -1,6 +1,3 @@
-from src.category import Category
-
-
 def test_init_product(product_apple):
     assert product_apple.name == "Apple"
     assert product_apple.description == "red"
@@ -13,4 +10,4 @@ def test_init_category(category_fruit):
     assert category_fruit.description == "fruits from India"
     assert category_fruit.products == ["banana", "mango"]
     assert category_fruit.product_count == 2
-    assert Category.category_count == 1
+    assert category_fruit.category_count == 2

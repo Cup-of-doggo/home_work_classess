@@ -1,3 +1,6 @@
+from src.product import Product
+
+
 class Category:
     name: str
     description: str
@@ -8,6 +11,16 @@ class Category:
     def __init__(self, name, description, products):
         self.name = name
         self.description = description
-        self.products = products
+        self.__products = products
         self.product_count += len(products)
         Category.category_count += 1
+
+    @property
+    def products(self):
+        return self.__products
+
+
+    def add_product(self,product):
+        self.product_count += 1
+        return self.__products.append(product)
+
