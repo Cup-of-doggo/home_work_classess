@@ -27,5 +27,13 @@ class Category:
         self.product_count += 1
         return self.__products.append(product)
 
+
     def __str__(self):
-        return f'{self.name}, количество продуктов: {len(self.__products)}'
+        return f'{self.name}, количество продуктов: {self.quantity_count()}'
+
+
+    def quantity_count(self):
+        quantity_list = []
+        for product in self.__products:
+            quantity_list.append(Product.quantity(product))
+        return sum(quantity_list)

@@ -21,3 +21,6 @@ def test_price_setter():
 
 def test_add():
     assert some_product + one_more_product == 3750
+
+def test_quantity():
+    assert some_product.quantity == 10

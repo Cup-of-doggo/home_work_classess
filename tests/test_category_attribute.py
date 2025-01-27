@@ -13,3 +13,7 @@ def test_category_product():
 def test_category_add_product():
     category_1.add_product(new_product)
     assert category_1.products == ['corn, 100 руб. Остаток: 10 шт.','Apple, 150 руб. Остаток: 15 шт.']
+
+
+def test_quantity_count():
+    assert category_1.quantity_count() == 25
