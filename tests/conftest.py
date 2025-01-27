@@ -2,6 +2,7 @@ import pytest
 
 from src.category import Category
 from src.product import Product
+from tests.test_product_attribute import some_product
 
 
 @pytest.fixture
@@ -11,4 +12,4 @@ def product_apple():
 
 @pytest.fixture
 def category_fruit():
-    return Category("fruits", "fruits from India", ["banana", "mango"])
+    return Category("fruits", "fruits from India", [some_product])
