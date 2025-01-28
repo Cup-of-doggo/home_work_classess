@@ -24,8 +24,12 @@ class Category:
 
 
     def add_product(self,product):
-        self.product_count += 1
-        return self.__products.append(product)
+        if isinstance(product, Product) is True:
+            self.__products.append(product)
+            self.product_count = len(self.__products)
+            return self.__products
+        else:
+            raise TypeError
 
 
     def __str__(self):

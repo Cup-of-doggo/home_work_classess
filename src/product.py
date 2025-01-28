@@ -10,6 +10,7 @@ class Product:
         self.__price = price
         self.quantity = quantity
 
+
     @classmethod
     def new_product(cls, product):
         name = product['name']
@@ -18,12 +19,15 @@ class Product:
         quantity = product['quantity']
         return cls(name, description, price, quantity)
 
+
     def __str__(self):
         return f'{self.name}, {self.__price} руб. Остаток: {self.quantity} шт.'
+
 
     @property
     def price(self):
         return self.__price
+
 
     @price.setter
     def price(self, new_price):
@@ -32,8 +36,37 @@ class Product:
         else:
             self.__price = new_price
 
+
     def __add__(self,other):
-        return self.__price * self.quantity + other.__price * other.quantity
+        if type(self) == type(other):
+            return self.__price * self.quantity + other.__price * other.quantity
+        else:
+            raise TypeError
+
 
     def quantity(self):
         return self.quantity
+
+
+class Smartphone(Product):
+    efficiency: int
+    model: str
+    memory: int
+    color: str
+    def __init__(self, name, description, price, quantity, efficiency, model, memory, color):
+        super().__init__(name, description, price, quantity)
+        self.efficiency = efficiency
+        self.model = model
+        self.memory = memory
+        self.color = color
+
+
+class LawnGrass(Product):
+    country: str
+    germination_period: str
+    color: str
+    def __init__(self, name, description, price, quantity, country, germination_period, color):
+        super().__init__(name, description, price, quantity)
+        self.country = country
+        self.germination_period = germination_period
+        self.color = color
