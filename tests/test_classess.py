@@ -1,3 +1,4 @@
+from src.product import Product, MixinParam
 from tests.test_product_attribute import some_product
 
 
@@ -6,6 +7,7 @@ def test_init_product(product_apple):
     assert product_apple.description == "red"
     assert product_apple.price == 99.9
     assert product_apple.quantity == 1000
+    assert product_apple.__repr__() == 'Product(Apple, red, 99.9, 1000)'
 
 
 def test_init_category(category_fruit):
