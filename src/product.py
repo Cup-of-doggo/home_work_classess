@@ -26,6 +26,10 @@ class Product(BaseProduct, MixinParam):
         self.__price = price
         self.quantity = quantity
         super().__init__()
+        if quantity <= 0:
+            raise ValueError('Товар с нулевым количеством не может быть добавлен')
+
+
 
 
     @classmethod

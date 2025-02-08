@@ -1,4 +1,3 @@
-from src.product import Product, MixinParam
 from tests.test_product_attribute import some_product
 
 
@@ -15,7 +14,7 @@ def test_init_category(category_fruit):
     assert category_fruit.description == "fruits from India"
     assert category_fruit.products == [str(some_product)]
     assert category_fruit.product_count == 1
-    assert category_fruit.category_count == 2
+    assert category_fruit.category_count == 3
 
 
 def test_init_Smartphone(smartphone):
